@@ -26,6 +26,7 @@ const SearchParams = () => {
             placeholder="animal"
             onChange={(e) => {
               setAnimal(e.target.value);
+              setBreed("");
             }}
           >
             <option />
