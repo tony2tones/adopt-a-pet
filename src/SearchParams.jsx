@@ -24,10 +24,11 @@ const SearchParams = () => {
           e.preventDefault();
           const formData = new FormData(e.target);
           const obj = {
-            aniumal: formData.get("animal") ?? "",
-            breeds: formData.get("breed") ?? "",
+            animal: formData.get("animal") ?? "",
+            breed: formData.get("breed") ?? "",
             location: formData.get("location") ?? "",
           };
+          console.log('WHAT IS IN HERER ', obj)
           setRequestParams(obj);
         }}
       >
@@ -43,7 +44,6 @@ const SearchParams = () => {
             placeholder="animal"
             onChange={(e) => {
               setAnimal(e.target.value);
-              setBreed("");
             }}
           >
             <option />
@@ -54,7 +54,7 @@ const SearchParams = () => {
           </select>
         </label>
         <label htmlFor="breed">breed</label>
-        <select id="breed" name="breed" placeholder="breed">
+        <select id="breed" name="breed" placeholder="breed" disabled={breeds.length === 0}>
           <option />
           {breeds.map((breed) => {
             return <option key={breed}>{breed}</option>;
