@@ -28,12 +28,11 @@ const SearchParams = () => {
             breed: formData.get("breed") ?? "",
             location: formData.get("location") ?? "",
           };
-          console.log('WHAT IS IN HERER ', obj)
           setRequestParams(obj);
         }}
       >
         <label htmlFor="Location">
-          Locartion
+          Location
           <input name="location" id="location" placeholder="Location" />
         </label>
         <label htmlFor="animal">
